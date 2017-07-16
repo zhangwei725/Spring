@@ -500,88 +500,65 @@
 
    2. 示例代码
 
-      ```
-      1. Java配置
-      public class Application {
-      private User user;
-
-      public Application(User user) {
-      this.user = user;
-      }
-      public User getUser() {
-      return user;
-      }
-
-      public void setUser(User user) {
-      this.user = user;
-      }
-      }
-      public class User implements Serializable {
-      private String id;
-      private String name;
-      private String sex;
-      private Integer age;
-      public void destroy() {
-      System.out.println("销毁!");
-      }
-      public void init() {
-      System.out.println("初始化!");
-      }
-
- 
+      ```java
+      public class Application { 
+          private User user;
+    
+          public Application(User user) {
+              this.user = user;
+          }
+          public User getUser() {
+              return user;
+          }
   
+          public void setUser(User user) {
+              this.user = user;
+          }
+      }
+       public class User implements Serializable {
+            private String id;
+            private String name;
+            private String sex;
+            private Integer age;
+            public void destroy() {
+            System.out.println("销毁!");
+            }
+            public void init() {
+                System.out.println("初始化!");
+      } 
       ```
 
+      ```java
+        1.根据属性名来加载
+        private User user;
+        <bean id="application" class=" com.werner.di.Application" autowire="byName"/>  
+        <bean id="user_id" class=" com.werner.di.User" >  
+            <property name="name" value="user"/>  
+        </bean>  
 
+        2. 根据构造类型来加载
+        <bean id="application" class=" com.werner.di.Application" autowire="byType"/>  
+        <bean id="user" class=" com.werner.di.User" >  
+            <property name="name" value="user"/>  
+        </bean>  
 
+        3. 根据构造方法来加载
+        public Application(User user) {
+                this.user = user;
+        }
+        <bean id="app" class="com.werner.di.Application" autowire="constructor">
+        </bean>
       ```
-
-      ```
-
-
-
-```
-
-```
 
 8、init-method
 
-1. 说明
+9、destroy-method
 
-   初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
-
-2. 示例代码
-
-   ```
-   public class User implements Serializable {
-     public void init() {
-     System.out.println("初始化");
-     }
-   }
-   ```
-
-   ```xml
-   <
-   bean
-   class
-   =
-   "com.werner.di.User"
-   name
-   =
-   "user"
-   init-method
-   =
-   "init
-   >
-   ```
-
-   9、destroy-method
-
-3. 说明:
+1. 说明:
 
    销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
 
-4. 示例代码
+2. 示例代码
 
    ```
    public
