@@ -34,9 +34,9 @@
 
    4. 根据处理中不同的分支和结果，决定转向那个JSP等
 
-   1. JSP作为View层，负责生成交互后返回的界面
+   JSP作为View层，负责生成交互后返回的界面
 
-      1. 它主要通过信息共享，获取Servlet生成的对象或JavaBean，从中取出数据，插入到HTML页面中
+   1. 它主要通过信息共享，获取Servlet生成的对象或JavaBean，从中取出数据，插入到HTML页面中
 
 ## 2. EJB\(Enterprise Java bean\)
 
