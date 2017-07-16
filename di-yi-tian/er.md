@@ -503,14 +503,14 @@
       ```
       public class Application { 
           private User user;
-    
+
           public Application(User user) {
               this.user = user;
           }
           public User getUser() {
               return user;
           }
-  
+
           public void setUser(User user) {
               this.user = user;
           }
@@ -526,7 +526,8 @@
             }
             public void init() {
                 System.out.println("初始化!");
-            } 
+            }
+      
       ```
 
    8、init-method
