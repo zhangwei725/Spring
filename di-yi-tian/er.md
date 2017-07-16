@@ -420,55 +420,22 @@
    2. 示例代码
 
       ```
-      <
-      web-app
-      >
-       ...
-      <
-      listener
-      >
-      <
-      listener-class
-      >
-      org.springframework.web.context.request.RequestContextListener
-      <
-      /
-      listener-class
-      >
-      <
-      /
-      listener
-      >
-       ...
-      <
-      /
-      web-app
-      >
+      <web-app>
+         ...
+        <listener>
+      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+        </listener>
+         ...
+      </web-app>
       ```
 
       ```
-      <
-      bean
-      id
-      =
-      "user"
-      class
-      =
-      "com.zw.api.bean.User"
-      scope
-      =
-      "request"
-      init-method
-      =
-      "init"
-      destroy-method
-      =
-      "destroy"
-      >
-      <
-      /
-      bean
-      >
+      <bean id="user"
+                class="com.zw.api.bean.User"
+                scope="request"
+                init-method="init"
+                destroy-method="destroy">
+      </bean>
       ```
 
    4、session
@@ -480,52 +447,19 @@
    2. 示例代码
 
       ```
-      <
-      web-app
-      >
-       ...
-      <
-      listener
-      >
-      <
-      listener-class
-      >
-      org.springframework.web.context.request.RequestContextListener
-      <
-      /
-      listener-class
-      >
-      <
-      /
-      listener
-      >
-       ...
-      <
-      /
-      web-app
-      >
-      <
-      bean
-      id
-      =
-      "user"
-      class
-      =
-      "com.zw.api.bean.User"
-      scope
-      =
-      "session"
-      init-method
-      =
-      "init"
-      destroy-method
-      =
-      "destroy"
-      >
-      <
-      /
-      bean
-      >
+      <web-app>
+         ...
+        <listener>
+      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+        </listener>
+         ...
+      </web-app>
+      <bean id="user"
+                class="com.zw.api.bean.User"
+                scope="session"
+                init-method="init"
+                destroy-method="destroy">
+      </bean>
       ```
 
    5、abstract
