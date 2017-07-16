@@ -59,9 +59,9 @@ EJB要解决的问题
 相关技术
 
 1. JDBC\( Java database connectivity\)
-
+2. 
 ```
-Java 数据库连接， 没有数据库的支持怎么能叫企业级应用
+
 ```
 
 JNDI
