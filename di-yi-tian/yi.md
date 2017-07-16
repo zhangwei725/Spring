@@ -16,27 +16,27 @@
 
    ![](http://opzv089nq.bkt.clouddn.com/17-7-15/6405306.jpg)
 
-2. 说明
+说明
 
-   1. JavaBean作为Model层，定义bean来表示数据和封装业务逻辑
+JavaBean作为Model层，定义bean来表示数据和封装业务逻辑
 
-      1. 定义数据Bean来表示需要显示给用户的结果
+1. 定义数据Bean来表示需要显示给用户的结果
 
-      2. 定义业务Bean来封装业务逻辑,DAO
+2. 定义业务Bean来封装业务逻辑,DAO
 
-   2. 使用Servlet处理用户请求
+1. 使用Servlet处理用户请求
 
-      1. 对输入数据的检查和转换
+   1. 对输入数据的检查和转换
 
-      2. 通过JavaBean访问数据库
+   2. 通过JavaBean访问数据库
 
-      3. 初始化JSP页面中要用到的JavaBean或对象,保存在作用域中
+   3. 初始化JSP页面中要用到的JavaBean或对象,保存在作用域中
 
-      4. 根据处理中不同的分支和结果，决定转向那个JSP等
+   4. 根据处理中不同的分支和结果，决定转向那个JSP等
 
-   3. JSP作为View层，负责生成交互后返回的界面
+2. JSP作为View层，负责生成交互后返回的界面
 
-      1. 它主要通过信息共享，获取Servlet生成的对象或JavaBean，从中取出数据，插入到HTML页面中
+   1. 它主要通过信息共享，获取Servlet生成的对象或JavaBean，从中取出数据，插入到HTML页面中
 
 ## 2. EJB\(Enterprise Java bean\)
 
@@ -57,8 +57,6 @@ EJB要解决的问题
 可扩展 \(Scalable\)
 
 相关技术
-
-
 
 ### 2.2.EJB的缺点
 
