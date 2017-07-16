@@ -128,27 +128,10 @@
 
    ```
    @Test
-   public
-   void
-   TestDo
-   () {
-   Person
-   person
-   =
-   new
-   Person
-   ();
-   person
-   .
-   injection
-   (
-   new
-   Head
-   ());
-   person
-   .
-   doSomething
-   ();
+   public void TestDo() {
+      Person person = new Person();
+      person.injection(new Head());
+      person.doSomething();
    }
    ```
 
