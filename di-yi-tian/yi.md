@@ -46,19 +46,15 @@
 
 2. EJB是sun的JavaEE服务器端组件模型，设计目标与核心应用是部署分布式应用程序。简单来说就是把已经编写好的程序（即：类）打包放在服务器上执行。凭借java跨平台的优势，用EJB技术部署的分布式系统可以不限于特定的平台。EJB \(Enterprise JavaBean\)是J2EE\(javaEE\)的一部分，定义了一个用于开发基于组件的企业多重应用程序的标准。其特点包括网络服务支持和核心开发工具\(SDK\)。 在J2EE里，Enterprise Java Beans\(EJB\)称为Java 企业Bean，是Java的核心代码，分别是会话Bean（Session Bean），实体Bean（Entity Bean）和消息驱动Bean（MessageDriven Bean）。\(百科\)
 
-3. EJB要解决的问题
+EJB要解决的问题
 
-   1. 数据存储\(Persistent\)
+1. 数据存储\(Persistent\)
+2. 分布式 \(Distributed\)
+3. 事务处理\(Transactional\)
+4. 安全性 \(Secure\)
+5. 高可用性
 
-   2. 分布式 \(Distributed\)
-
-   3. 事务处理\(Transactional\)
-
-   4. 安全性 \(Secure\)
-
-   5. 高可用性
-
-   6. 可扩展 \(Scalable\)
+可扩展 \(Scalable\)
 
 相关技术
 
@@ -110,7 +106,7 @@ Java 数据库连接， 没有数据库的支持怎么能叫企业级应用
    收发邮件也是必不可少的啊。
    ```
 
-1. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
+6. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
 
    1. 分布式：一个业务分拆多个子业务，部署在不同的服务器上
 
