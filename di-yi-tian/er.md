@@ -498,39 +498,48 @@
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
       ```
 
-   2. 示例代码  
-
+   2. 示例代码    
 
       ```
       1. Java配置
-      public class Application { 
-          private User user;
+      public class Application {
+      private User user;
 
       public Application(User user) {
-          this.user = user;
+      this.user = user;
       }
       public User getUser() {
-          return user;
+      return user;
       }
 
       public void setUser(User user) {
-          this.user = user;
+      this.user = user;
       }
       }
       public class User implements Serializable {
-            private String id;
-            private String name;
-            private String sex;
-            private Integer age;
-            public void destroy() {
-            System.out.println("销毁!");
-            }
-            public void init() {
-                System.out.println("初始化!");
-            }
+      private String id;
+      private String name;
+      private String sex;
+      private Integer age;
+      public void destroy() {
+      System.out.println("销毁!");
+      }
+      public void init() {
+      System.out.println("初始化!");
+      }
       ```
 
-       xml配置
+       
+
+       
+
+   ```
+    
+   ```
+
+
+
+
 
 ```
 
