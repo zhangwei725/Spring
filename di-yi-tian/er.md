@@ -498,7 +498,7 @@
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
       ```
 
-   2. 示例代码    
+   2. 示例代码
 
       ```
       1. Java配置
@@ -527,17 +527,16 @@
       public void init() {
       System.out.println("初始化!");
       }
+
+ 
+  
       ```
 
-       
-
-       
-
-   ```
-    
-   ```
 
 
+      ```
+
+      ```
 
 
 
