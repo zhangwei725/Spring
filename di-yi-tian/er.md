@@ -142,6 +142,27 @@
 1. 在pom.xml文件中添加
 
    ```xml
+           <dependency>
+               <groupId>org.springframework</groupId>
+               <artifactId>spring-core</artifactId>
+               <version>4.3.9.RELEASE</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework</groupId>
+               <artifactId>spring-context</artifactId>
+               <version>4.3.9.RELEASE</version>
+           </dependency>
+
+           <dependency>
+               <groupId>org.springframework</groupId>
+               <artifactId>spring-context-support</artifactId>
+               <version>4.3.9.RELEASE</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework</groupId>
+               <artifactId>spring-web</artifactId>
+               <version>4.3.9.RELEASE</version>
+           </dependency>
 
    ```
 
@@ -234,7 +255,13 @@
 ##### 6.2.1.2 XML配置的结构
 
 ```
-
+<beans>
+    <import resource="xxx.xml"/>
+    <bean id="" class=""></bean>
+    <bean name="" class=""></bean>
+    <alias alias="alias" name="alias" />
+    <import resource="xxx.xml" />
+</beans>
 ```
 
 1. 说明
