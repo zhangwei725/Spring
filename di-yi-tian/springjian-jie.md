@@ -98,8 +98,6 @@
    模板引擎（FreeMarker, JasperReports, Velocity）等。
    ```
 
-   ​
-
 4. spring-expression 模块
 
    ```
@@ -107,8 +105,6 @@
    它是JSP2.1规范中定义的统一表达式语言的扩展，支持 set 和 get 属性值、属性赋值、方法调用、
    访问数组集合及索引的内容、逻辑算术运算、命名变量、通过名字从Spring IoC容器检索对象，还支持列表的投影、选择以及聚合等。
    ```
-
-   ​
 
 ### 3.5 Data Access/Integration - 数据访问与集成
 
