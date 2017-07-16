@@ -129,7 +129,8 @@
 3. spring-orm 模块
 
    ```
-   提供了对流行的对象关系映射 API的集成，包括 JPA、JDO 和 Hibernate 等。通过此模块可以让这些 ORM 框架和 spring 的其它功能整合，比如前面提及的事务管理。
+   提供了对流行的对象关系映射 API的集成，包括 JPA、JDO 和 Hibernate 等。
+   通过此模块可以让这些 ORM 框架和 spring 的其它功能整合，比如前面提及的事务管理。
    ```
 
 4. spring-oxm
@@ -214,7 +215,8 @@
 1. spring-test 模块
 
    ```
-   通过 JUnit 和 TestNG 组件支持单元测试和集成测试。它提供了一致性地加载和缓存 Spring 上下文，也提供了用于单独测试代码的模拟对象（mock object）
+   通过 JUnit 和 TestNG 组件支持单元测试和集成测试。
+   它提供了一致性地加载和缓存 Spring 上下文，也提供了用于单独测试代码的模拟对象（mock object）
    ```
 
 Spring包依赖说明:
