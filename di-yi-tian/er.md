@@ -63,53 +63,15 @@
 1. 示例代码
 
    ```java
-   public
-   class
-   Person
-    {
-   private
-   Hand
-   hand
-   ;
-   private
-   Footer
-   footer
-   ;
-   private
-   Head
-   head
-   ;
-   public
-   Person
-   (
-   Hand
-   hand
-   , 
-   Footer
-   footer
-   , 
-   Head
-   head
-   ) {
-   this
-   .
-   hand
-   =
-   hand
-   ;
-   this
-   .
-   footer
-   =
-   footer
-   ;
-   this
-   .
-   head
-   =
-   head
-   ;
-     }
+   public class Person {
+       private Hand hand;
+       private Footer footer;
+       private Head head;
+   	public Person(Hand hand, Footer footer, Head head) {
+           this.hand = hand;
+           this.footer = footer;
+           this.head = head;
+     	  }
     }
    ```
 
