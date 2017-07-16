@@ -404,24 +404,11 @@
    2. 示例代码
 
       ```
-      <
-      bean
-      id
-      =
-      "user"
-      class
-      =
-      "com.zw.api.bean.User"
-      scope
-      =
-      "prototype"
-      init-method
-      =
-      "init"
-      destroy-method
-      =
-      "destroy"
-      >
+          <bean id="user"
+                class="com.zw.api.bean.User"
+                scope="prototype"
+                init-method="init"
+                destroy-method="destroy">
       ```
 
    3、request 可选值
