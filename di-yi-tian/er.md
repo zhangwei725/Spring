@@ -102,7 +102,7 @@
         public Person() {
            head = new Head();
        }
-    
+
        public void setHead(Head head) {
            this.head = head;
        }
@@ -114,31 +114,15 @@
 
 1. 示例代码
 
-   ```
-   public
-   class
-   Person
-   implements
-   InjectFinder
-    {
-   private
-   Head
-   head
-   ;
+   ```java
+   public class Person implements InjectFinder {
+       private Head head;
    }
    ```
 
-   ```
-   public
-   interface
-   InjectFinder
-    {
-   void
-   injection
-   (
-   Head
-   head
-   );
+   ```java
+   public interface InjectFinder {
+       void injection(Head head);
    }
    ```
 
