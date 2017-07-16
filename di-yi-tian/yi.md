@@ -67,7 +67,7 @@ EJB (Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开�
 
 6. 可扩展 \(Scalable\)
 
-2.3. 技术规范
+### 2.3. 技术规范
 
 1. JDBC\( Java database connectivity\)
 
