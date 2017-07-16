@@ -503,14 +503,14 @@
       ```java
       public class Application { 
           private User user;
-    
+
           public Application(User user) {
               this.user = user;
           }
           public User getUser() {
               return user;
           }
-  
+
           public void setUser(User user) {
               this.user = user;
           }
@@ -525,7 +525,7 @@
             }
             public void init() {
                 System.out.println("初始化!");
-      } 
+      }
       ```
 
       ```java
@@ -551,6 +551,29 @@
       ```
 
 8、init-method
+
+说明
+
+1. 初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
+
+2. 示例代码
+
+   ```
+   public class User implements Serializable {
+       public void init() {
+           System.out.println("初始化");
+       }
+   }   
+
+   ```
+
+   ```
+   bean class="com.werner.di.User" name="user"
+       init-method="init>
+   ```
+
+  
+
 
 9、destroy-method
 
