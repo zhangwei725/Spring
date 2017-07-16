@@ -10,13 +10,13 @@
 
    如果有好几千个jsp， 这些jsp互相调用\(通过GET/POST\), 到了最后调用关系无人能搞懂。
 
-### 2.JSP和JavaBean+Servlet\(Model2\)
+### 2. JSP和JavaBean+Servlet\(Model2\)
 
-1. 模型的结构
+#### 2.1 模型的结构
 
-   ![](http://opzv089nq.bkt.clouddn.com/17-7-15/6405306.jpg)
+![](http://opzv089nq.bkt.clouddn.com/17-7-15/6405306.jpg)
 
-说明
+#### 2.2. 说明
 
 JavaBean作为Model层，定义bean来表示数据和封装业务逻辑
 
