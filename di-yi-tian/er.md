@@ -491,8 +491,8 @@
       2、byName：通过属性名字进行自动装配。
       3、byType：如果BeanFactory中正好有一个同属性类型一样的bean，就自动装配这个属性。
          如果有多于一个这样的bean，就抛出一个致命异常，
-      它指出你可能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。
-      如果这是你不想要的情况（什么都不发生），通过设置dependency-check="objects"属性值来指定在这种情况下应该抛出错误。
+         它指出你可能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。
+         如果这是你不想要的情况（什么都不发生），通过设置dependency-check="objects"属性值来指定在这种情况下应该抛出错误。
       4、constructor：这个同byType类似，不过是应用于构造函数的参数。
       如果在BeanFactory中不是恰好有一个bean与构造函数参数相同类型，则一个致命的错误会产生。
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
@@ -501,200 +501,32 @@
    2. 示例代码
 
       ```
-      public
-      class
-      Application
-       { 
-      private
-      User
-      user
-      ;
-      public
-      Application
-      (
-      User
-      user
-      ) {
-      this
-      .
-      user
-      =
-      user
-      ;
-        }
-      public
-      User
-      getUser
-      () {
-      return
-      user
-      ;
-        }
-      public
-      void
-      setUser
-      (
-      User
-      user
-      ) {
-      this
-      .
-      user
-      =
-      user
-      ;
-        }
+      public class Application { 
+          private User user;
+    
+          public Application(User user) {
+              this.user = user;
+          }
+          public User getUser() {
+              return user;
+          }
+  
+          public void setUser(User user) {
+              this.user = user;
+          }
       }
-      ​
-      ​
-      public
-      class
-      User
-      implements
-      Serializable
-       {
-      private
-      String
-      id
-      ;
-      private
-      String
-      name
-      ;
-      private
-      String
-      sex
-      ;
-      private
-      Integer
-      age
-      ;
-      public
-      void
-      destroy
-      () {
-      System
-      .
-      out
-      .
-      println
-      (
-      "销毁!"
-      );
-        }
-      public
-      void
-      init
-      () {
-      System
-      .
-      out
-      .
-      println
-      (
-      "初始化!"
-      );
-        }
-      ```
 
-      ```
-      1.根据属性名来加载
-      private User user;
-      <
-      bean
-      id
-      =
-      "application"
-      class
-      =
-      " com.werner.di.Application"
-      autowire
-      =
-      "byName"
-      /
-      >
-      <
-      bean
-      id
-      =
-      "user_id"
-      class
-      =
-      " com.werner.di.User"
-      >
-      <
-      property
-      name
-      =
-      "name"
-      value
-      =
-      "user"
-      /
-      >
-      <
-      /
-      bean
-      >
-      ​
-      2. 根据构造类型来加载
-      <
-      bean
-      id
-      =
-      "application"
-      class
-      =
-      " com.werner.di.Application"
-      autowire
-      =
-      "byType"
-      /
-      >
-      <
-      bean
-      id
-      =
-      "user"
-      class
-      =
-      " com.werner.di.User"
-      >
-      <
-      property
-      name
-      =
-      "name"
-      value
-      =
-      "user"
-      /
-      >
-      <
-      /
-      bean
-      >
-      ​
-      3. 根据构造方法来加载
-      public Application(User user) {
-        this.user = user;
-      }
-      <
-      bean
-      id
-      =
-      "app"
-      class
-      =
-      "com.werner.di.Application"
-      autowire
-      =
-      "constructor"
-      >
-      <
-      /
-      bean
-      >
+        public class User implements Serializable {
+            private String id;
+            private String name;
+            private String sex;
+            private Integer age;
+            public void destroy() {
+            System.out.println("销毁!");
+            }
+            public void init() {
+                System.out.println("初始化!");
+            } 
       ```
 
    8、init-method
