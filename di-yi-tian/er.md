@@ -158,7 +158,9 @@
 1. 说明
 
    ```
-   这一功能是在spring2之后引进来的，spring的容器启动时回去寻找jar包下面的META-INF，看里面是否有spring.schema或者是spring.handlers,这个handler文件里面就定义了命名空间以及处理这个命名空间的Java类
+   这一功能是在spring2之后引进来的，spring的容器启动时回去寻找jar包下面的META-INF，
+   看里面是否有spring.schema或者是spring.handlers,
+   这个handler文件里面就定义了命名空间以及处理这个命名空间的Java类
    ```
 
 2. 完整结构图
