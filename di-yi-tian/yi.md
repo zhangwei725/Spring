@@ -53,7 +53,7 @@ EJB (Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开�
 分别是会话Bean（Session Bean），实体Bean（Entity Bean）和消息驱动Bean（MessageDriven Bean）。(百科)
 ```
 
-EJB要解决的问题
+### 2.2.EJB要解决的问题
 
 1. 数据存储\(Persistent\)
 
@@ -67,7 +67,7 @@ EJB要解决的问题
 
 6. 可扩展 \(Scalable\)
 
-1. 技术规范
+7. 技术规范
 
    1. JDBC\( Java database connectivity\)
 
@@ -114,7 +114,7 @@ EJB要解决的问题
       收发邮件也是必不可少的啊。
       ```
 
-2. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
+8. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
 
    1. 分布式：一个业务分拆多个子业务，部署在不同的服务器上
 
