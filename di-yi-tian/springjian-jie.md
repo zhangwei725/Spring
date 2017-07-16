@@ -74,19 +74,28 @@
 1. spring-core
 
    ```
-   这个jar文件包含Spring框架基本的核心工具类，Spring其它组件要都要使用到这个包里的类，是其它组件的基本核心，当然你也可以在自己的应用系统中使用这些工具类
+   这个jar文件包含Spring框架基本的核心工具类，Spring其它组件要都要使用到这个包里的类，是其它组件的基本核心，
+   当然你也可以在自己的应用系统中使用这些工具类
    ```
 
 2. spring-beans 模块
 
    ```
-   这个jar文件是所有应用都要用到的，它包含访问配置文件、创建和管理bean以及进行Inversion of Control / Dependency Injection（IoC/DI）操作相关的所有类。如果应用只需基本的IoC/DI支持，引入spring-core.jar及spring- beans.jar文件就可以了
+   这个jar文件是所有应用都要用到的，它包含访问配置文件、创建和管理bean以及
+   进行Inversion of Control / Dependency Injection（IoC/DI）操作相关的所有类。
+   如果应用只需基本的IoC/DI支持，引入spring-core.jar及spring- beans.jar文件就可以了
    ```
 
 3. spring-context 模块
 
    ```
-   Spring核心提供了大量扩展，这样使得由 Core 和 Beans 提供的基础功能增强：这意味着Spring 工程能以框架模式访问对象。Context 模块继承了Beans 模块的特性并增加了对国际化（例如资源绑定）、事件传播、资源加载和context 透明化（例如 Servlet container）。同时，也支持JAVA EE 特性，例如 EJB、 JMX 和 基本的远程访问。Context 模块的关键是 ApplicationContext 接口。spring-context-support 则提供了对第三方库集成到 Spring-context 的支持，比如缓存（EhCache, Guava, JCache）、邮件（JavaMail）、调度（CommonJ, Quartz）、模板引擎（FreeMarker, JasperReports, Velocity）等。
+   Spring核心提供了大量扩展，这样使得由 Core 和 Beans 提供的基础功能增强：
+   这意味着Spring 工程能以框架模式访问对象。Context 模块继承了Beans 模块的特性并增加了对国际化（例如资源绑定）、
+   事件传播、资源加载和context 透明化（例如 Servlet container）。
+   同时，也支持JAVA EE 特性，例如 EJB、 JMX 和 基本的远程访问。Context 模块的关键是 ApplicationContext 接口。
+   spring-context-support 则提供了对第三方库集成到 Spring-context 的支持，
+   比如缓存（EhCache, Guava, JCache）、邮件（JavaMail）、调度（CommonJ, Quartz）、
+   模板引擎（FreeMarker, JasperReports, Velocity）等。
    ```
 
    ​
