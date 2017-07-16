@@ -498,26 +498,26 @@
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
       ```
 
-   2. 示例代码
+   2. 示例代码  
+
 
       ```
-      Java配置
+      1. Java配置
       public class Application { 
           private User user;
 
-          public Application(User user) {
-              this.user = user;
-          }
-          public User getUser() {
-              return user;
-          }
-
-          public void setUser(User user) {
-              this.user = user;
-          }
+      public Application(User user) {
+          this.user = user;
+      }
+      public User getUser() {
+          return user;
       }
 
-        public class User implements Serializable {
+      public void setUser(User user) {
+          this.user = user;
+      }
+      }
+      public class User implements Serializable {
             private String id;
             private String name;
             private String sex;
@@ -528,89 +528,86 @@
             public void init() {
                 System.out.println("初始化!");
             }
-      
-      
-      xml配置      
-      
-      
-      
-      
-      
-      
       ```
 
-   8、init-method
+       xml配置
 
-   1. 说明
+```
 
-      初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
+```
 
-   2. 示例代码
+8、init-method
 
-      ```
-      public class User implements Serializable {
-        public void init() {
-        System.out.println("初始化");
-        }
-      }
-      ```
+1. 说明
 
-      ```xml
-      <
-      bean
-      class
-      =
-      "com.werner.di.User"
-      name
-      =
-      "user"
-      init-method
-      =
-      "init
-      >
-      ```
+   初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
+
+2. 示例代码
+
+   ```
+   public class User implements Serializable {
+     public void init() {
+     System.out.println("初始化");
+     }
+   }
+   ```
+
+   ```xml
+   <
+   bean
+   class
+   =
+   "com.werner.di.User"
+   name
+   =
+   "user"
+   init-method
+   =
+   "init
+   >
+   ```
 
    9、destroy-method
 
-   1. 说明:
+3. 说明:
 
-      销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
+   销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
 
-   2. 示例代码
+4. 示例代码
 
-      ```
-      public
-      class
-      User
-      implements
-      Serializable
-       {
-      ​
-      public
-      void
-      destroy
-      () {
-        }
-      }
-      ```
+   ```
+   public
+   class
+   User
+   implements
+   Serializable
+    {
+   ​
+   public
+   void
+   destroy
+   () {
+     }
+   }
+   ```
 
-      ```
-      <
-      bean
-      class
-      =
-      "com.werner.di.User"
-      name
-      =
-      "user"
-      init-method
-      =
-      "init"
-      destroy-method
-      =
-      "destroy"
-      >
-      ```
+   ```
+   <
+   bean
+   class
+   =
+   "com.werner.di.User"
+   name
+   =
+   "user"
+   init-method
+   =
+   "init"
+   destroy-method
+   =
+   "destroy"
+   >
+   ```
 
 
 
