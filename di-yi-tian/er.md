@@ -336,8 +336,8 @@
             depends-on ＝"依赖Bean的名字，Spring保证会在初始化这个Bean前先初始化被依赖的Beans,这个属性不会被子Bean继承，子Bean要重新写自己的depends-on"      
             autowire-candidate = "是否为自动注入的候选，一般当其他Bean设置autowiring-mode属性为自动搜寻时可以避免或允许该Bean被列入匹配列表"    
             primary ＝ "是否将该Bean在其他Bean的自动注入候选人中设为首选">  
-       
-			// Constructor－arg方式给属性赋值写法一
+
+            // Constructor－arg方式给属性赋值写法一
             <constructor-arg type="int" value="1"/>
             // Constructor－arg方式给属性赋值写法二
             <constructor-arg name="xx" value="2"/>
