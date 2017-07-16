@@ -67,7 +67,7 @@ EJB (Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开�
 
 6. 可扩展 \(Scalable\)
 
-技术规范
+2.3. 技术规范
 
 1. JDBC\( Java database connectivity\)
 
@@ -114,7 +114,7 @@ EJB (Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开�
    收发邮件也是必不可少的啊。
    ```
 
-1. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
+7. 什么是"服务集群"？什么是"企业级开发"？ 什么分布式?
 
    1. 分布式：一个业务分拆多个子业务，部署在不同的服务器上
 
