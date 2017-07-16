@@ -135,11 +135,973 @@
    }
    ```
 
-## 六
+## 六、使用步骤
 
-## 七
+### 6.1、导入相应的jar包
 
-## 八
+1. 在pom.xml文件中添加
+
+   ```
+   <
+   dependency
+   >
+   <
+   groupId
+   >
+   org.springframework
+   <
+   /
+   groupId
+   >
+   <
+   artifactId
+   >
+   spring-core
+   <
+   /
+   artifactId
+   >
+   <
+   version
+   >
+   4.3.9.RELEASE
+   <
+   /
+   version
+   >
+   <
+   /
+   dependency
+   >
+   <
+   dependency
+   >
+   <
+   groupId
+   >
+   org.springframework
+   <
+   /
+   groupId
+   >
+   <
+   artifactId
+   >
+   spring-context
+   <
+   /
+   artifactId
+   >
+   <
+   version
+   >
+   4.3.9.RELEASE
+   <
+   /
+   version
+   >
+   <
+   /
+   dependency
+   >
+   ​
+   <
+   dependency
+   >
+   <
+   groupId
+   >
+   org.springframework
+   <
+   /
+   groupId
+   >
+   <
+   artifactId
+   >
+   spring-context-support
+   <
+   /
+   artifactId
+   >
+   <
+   version
+   >
+   4.3.9.RELEASE
+   <
+   /
+   version
+   >
+   <
+   /
+   dependency
+   >
+   ```
+
+2. 相应的jar
+
+   ![](http://opzv089nq.bkt.clouddn.com/17-7-16/66591711.jpg)
+
+### 6.2、Spring Bean配置
+
+#### 6.2.1、beans配置
+
+##### 6.2.1.1、命名空间\(xmlns\)
+
+1. 说明
+
+   ```
+   这一功能是在spring2之后引进来的，spring的容器启动时回去寻找jar包下面的META-INF，看里面是否有spring.schema或者是spring.handlers,这个handler文件里面就定义了命名空间以及处理这个命名空间的Java类
+   ```
+
+2. 完整结构图
+
+   ![](http://opzv089nq.bkt.clouddn.com/17-7-16/34611456.jpg)
+
+3. 说明
+
+   1、beans
+
+   ```
+   支持声明Bean和装配Bean，是Spring最核心也是最原始的命名空间
+   ```
+
+   2、context
+
+   ```
+   为配置Spring应用上下文提供配置元素，包括自动检测和自动装配、注入非Spring直接管理的对象
+   ```
+
+   3、aop
+
+   ```
+   为声明切面以及@AspectJ注解切面提供配置元素
+   ```
+
+   4、tx
+
+   ```
+   提供声明式事务配置
+   ```
+
+   5、util
+
+   ```
+   提供各种各样的工具类，包括集合配置为Bean、支持属性占位符元素
+   ```
+
+   6、jee
+
+   ```
+   提供了与J2EE API的集成
+   ```
+
+   7、jms
+
+   ```
+   为声明了消息驱动bean提供配置元素
+   ```
+
+   8、lang
+
+   ```
+   支持配置由Groovy、JRuby或者BeanShell等脚本实现的Bean 
+   ```
+
+   9、mvc
+
+   ```
+   启用Spring MVC能力，例如面向注解的控制器、视图控制和拦截器
+   ```
+
+   10、oxm
+
+   ```
+   支持由Java对象到XML的映射配置 
+   ```
+
+   ​
+
+##### 6.2.1.2 XML配置的结构
+
+```
+<
+beans
+>
+<
+import
+resource
+=
+"xxx.xml"
+/
+>
+<
+bean
+id
+=
+""
+class
+=
+""
+>
+<
+/
+bean
+>
+<
+bean
+name
+=
+""
+class
+=
+""
+>
+<
+/
+bean
+>
+<
+alias
+alias
+=
+"alias"
+name
+=
+"alias"
+/
+>
+<
+import
+resource
+=
+"xxx.xml"
+/
+>
+<
+/
+beans
+>
+```
+
+1. 说明
+
+   1、&lt;bean&gt;标签
+
+   ```
+   主要用来进行Bean定义
+   ```
+
+   2、&lt;alias&gt;标签
+
+   ```
+   用于定义Bean别名
+   ```
+
+   3、import标签
+
+   ```
+   用于导入其他配置文件的Bean定义，这是为了加载多个配置文件，当然也可以把这些配置文件构造为一个数组（new String[] {“xxx.xml”, xxx.xml}）传给ApplicationContext实现进行加载多个配置文件，那一个更适合由用户决定；这两种方式都是通过调用Bean Definition Reader 读取Bean定义，内部实现没有任何区别。
+   <
+   import
+   >
+   标签可以放在
+   <
+   beans
+   >
+   下的任何位置，没有顺序关系
+   ```
+
+
+
+#### 6.2.1、bean的xml配置
+
+##### 6.2.2.1、说明
+
+​ 在spring容器内拼凑bean叫作装配。装配bean的时候，你是在告诉容器，需要哪些bean，以及容器如何使用依赖注入将它们配合在一起
+
+##### 6.2.2.2、配置方式
+
+1. 通过全类名（反射）
+
+2. 通过工厂方法（静态工厂方法 & 实例工厂方法）
+
+3. FactoryBean
+
+##### 6.2.2.3、IoC容器
+
+1. BeanFactory
+
+   ```
+   IOC 容器的基本实现,BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身
+   ```
+
+2. ApplicationContext
+
+   ​ 提供了更多的高级特性. 是 BeanFactory 的子接口,ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合都直接使用 ,ApplicationContext 而非底层的 BeanFactory,主要实现类
+
+   1、ClassPathXmlApplicationContext：从 类路径下加载配置文件2、FileSystemXmlApplicationContext: 从文件系统中加载配置文件3、ConfigurableApplicationContext 扩展于 ApplicationContext，新增加两个主要方法：4、refresh\(\) 和 close\(\)， 让 ApplicationContext 具有启动、刷新和关闭上下文的能力5、ApplicationContext 在初始化上下文时就实例化所有单例的 Bean。
+
+3. WebApplicationContext
+
+   是专门为 WEB 应用而准备的，它允许从相对于 WEB 根目录的路径中完成初始化工作
+
+##### 6.2.2.4、基本配置
+
+```
+<
+bean
+class
+=
+"这个Bean的类"
+name/id
+=
+"Bean在容器里面的唯一名称"
+scope＝
+"Bean的作用域范围"
+autowiring－mode＝
+"这个Bean的properties的自动注入方式，"
+lazy-init
+=
+"是否为懒加载，"
+init－method＝
+"容器初始化该Bean后的回调方法，"
+destroy-method
+＝
+"容器在销毁该Bean后的回调方法，详细解释看下面"
+abstract
+=
+"是否为抽象Bean，主要用来统一XML配置文档里面的很多Bean的属性配置，与Java的Abstract Class无任何关系"
+parent
+=
+"父Bean的名称，会继承父Bean的属性，也是只在配置文档中有效，与Java的Class无任何关系"
+factory-method
+=
+"工厂方法的名字"
+factory-bean
+=
+"工厂Bean的名字"
+depends-on
+＝
+"依赖Bean的名字，Spring保证会在初始化这个Bean前先初始化被依赖的Beans,这个属性不会被子Bean继承，子Bean要重新写自己的depends-on"
+autowire-candidate
+ = 
+"是否为自动注入的候选，一般当其他Bean设置autowiring-mode属性为自动搜寻时可以避免或允许该Bean被列入匹配列表"
+primary
+＝
+"是否将该Bean在其他Bean的自动注入候选人中设为首选"
+>
+// Constructor－arg方式给属性赋值写法一
+<
+constructor-arg
+type
+=
+"int"
+value
+=
+"1"
+/
+>
+  // Constructor－arg方式给属性赋值写法二
+<
+constructor-arg
+name
+=
+"xx"
+value
+=
+"2"
+/
+>
+  // Constructor－arg方式给属性赋值写法三
+<
+constructor-arg
+index
+=
+"0"
+value
+=
+"3"
+/
+>
+  // Properties方式给属性赋值写法一
+<
+property
+name
+=
+"xx"
+>
+<
+ref
+bean
+=
+"另外一个Bean的名字"
+/
+>
+<
+/
+property
+>
+  // Properties方式给属性赋值写法二
+<
+property
+name
+=
+"xx"
+ref
+=
+"另外一个Bean的名字"
+/
+>
+  // Properties方式给属性赋值写法三
+<
+property
+name
+=
+"integerProperty"
+value
+=
+"1"
+/
+>
+<
+/
+bean
+>
+```
+
+##### 6.2.2.5、详细说明
+
+1. id
+
+   1、Bean 的名称,在 IOC 容器中必须是唯一的 ,代码中通过BeanFactory获取JavaBean实例时需以此作为索引名称
+
+   2、若id没有指定，Spring 自动将权限定性类名作为 Bean 的名字
+
+   3、id 可以指定多个名字，名字之间可用逗号、分号、或空格分隔
+
+2. name
+
+   1、同上，如果给bean增加别名，可以通过name属性指定一个或多个id。
+
+3. class
+
+   1、Java Bean 类名\(全路经\)。
+
+4. singleton
+
+   ```
+   用来配置 spring bean 的作用域。在spring2.0之前bean只有2种作用域即：singleton(单例)、non-singleton（也称 prototype）, 
+   ​
+   Spring2.0以后，增加了session、request、global session三种专用于Web应用程序上下文的Bean。因此，默认情况下Spring2.0现在有五种类型的Bean。当然，Spring2.0对 Bean的类型的设计进行了重构，并设计出灵活的Bean类型支持，理论上可以有无数多种类型的Bean，用户可以根据自己的需要，增加新的Bean类 型，满足实际应用需求
+   ```
+
+   1、singleton 可选值
+
+   1. 说明
+
+      当一个bean的 作用域设置为singleton, 那么Spring IOC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。换言之，当把 一个bean定义设置为singleton作用域时，Spring IOC容器只会创建该bean定义的唯一实例。这个单一实例会被存储到单例缓存（singleton cache）中，并且所有针对该bean的后续请求和引用都 将返回被缓存的对象实例，这里要注意的是singleton作用域和GOF设计模式中的单例是完全不同的，单例设计模式表示一个ClassLoader中 只有一个class存在，而这里的singleton则表示一个容器对应一个bean，也就是说当一个bean被标识为singleton时 候，spring的IOC容器中只会存在一个该bean
+
+   2. 示例代码
+
+      ```
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      "com.werner.di.bean.User"
+      scope
+      =
+      "singleton"
+      /
+      >
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      "com.werner.di.bean.User"
+      singleton
+      =
+      "true"
+      /
+      >
+      ```
+
+   2、prototype 可选值
+
+   1. 说明
+
+      prototype作用域部署的bean，每一次请求（将其注入到另一个bean中，或者以程序的方式调用容器的 getBean\(\)方法）都会产生一个新的bean实例，相当与一个new的操作，对于prototype作用域的bean，有一点非常重要，那就是Spring不能对一个prototype bean的整个生命周期负责，容器在初始化、配置、装饰或者是装配完一个prototype实例后，将它交给客户端，随后就对该prototype实例不闻不问了。不管何种作用域，容器都会调用所有对象的初始化生命周期回调方法，而对prototype而言，任何配置好的析构生命周期回调方法都将不会被调用。 清除prototype作用域的对象并释放任何prototype bean所持有的昂贵资源，都是客户端代码的职责。（让Spring容器释放被singleton作用域bean占用资源的一种可行方式是，通过使用 bean的后置处理器，该处理器持有要被清除的bean的引用。）
+
+   2. 示例代码
+
+      ```
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      "com.zw.api.bean.User"
+      scope
+      =
+      "prototype"
+      init-method
+      =
+      "init"
+      destroy-method
+      =
+      "destroy"
+      >
+      ```
+
+   3、request 可选值
+
+   1. 说明
+
+      ​ request表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效，配置实例：request、session、global session使用的时候首先要在初始化web的web.xml中做如下配置：如果你使用的是Servlet 2.4及以上的web容器，那么你仅需要在web应用的XML声明文件web.xml中增加下述ContextListener即可：
+
+   2. 示例代码
+
+      ```
+      <
+      web-app
+      >
+       ...
+      <
+      listener
+      >
+      <
+      listener-class
+      >
+      org.springframework.web.context.request.RequestContextListener
+      <
+      /
+      listener-class
+      >
+      <
+      /
+      listener
+      >
+       ...
+      <
+      /
+      web-app
+      >
+      ```
+
+      ```
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      "com.zw.api.bean.User"
+      scope
+      =
+      "request"
+      init-method
+      =
+      "init"
+      destroy-method
+      =
+      "destroy"
+      >
+      <
+      /
+      bean
+      >
+      ```
+
+   4、session
+
+   1. 说明
+
+      session作用域表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效,和request配置实例的前提一样，配置好web启动文件就可以如下配置
+
+   2. 示例代码
+
+      ```
+      <
+      web-app
+      >
+       ...
+      <
+      listener
+      >
+      <
+      listener-class
+      >
+      org.springframework.web.context.request.RequestContextListener
+      <
+      /
+      listener-class
+      >
+      <
+      /
+      listener
+      >
+       ...
+      <
+      /
+      web-app
+      >
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      "com.zw.api.bean.User"
+      scope
+      =
+      "session"
+      init-method
+      =
+      "init"
+      destroy-method
+      =
+      "destroy"
+      >
+      <
+      /
+      bean
+      >
+      ```
+
+   5、abstract
+
+   1. 说明
+
+      设定ApplicationContext是否对bean进行预先的初始化。
+
+   2. 示例代码
+
+      ```
+      <
+      bean
+      id
+      =
+      "user1"
+      class
+      =
+      "com.zw.api.bean.User"
+      abstract
+      =
+      "true"
+      scope
+      =
+      "session"
+      init-method
+      =
+      "init"
+      destroy-method
+      =
+      "destroy"
+      >
+      <
+      /
+      bean
+      >
+      ```
+
+   6、parent
+
+   7、autowire
+
+   1. bean自动装配模式。可选5种模式
+
+      ```
+      1、no：不使用自动装配。Bean的引用必须通过ref元素定义。
+      2、byName：通过属性名字进行自动装配。
+      3、byType：如果BeanFactory中正好有一个同属性类型一样的bean，就自动装配这个属性。如果有多于一个这样的bean，就抛出一个致命异常，它指出你可能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。如果这是你不想要的情况（什么都不发生），通过设置dependency-check="objects"属性值来指定在这种情况下应该抛出错误。
+      4、constructor：这个同byType类似，不过是应用于构造函数的参数。如果在BeanFactory中不是恰好有一个bean与构造函数参数相同类型，则一个致命的错误会产生。
+      5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
+      ```
+
+   2. 示例代码
+
+      ```
+      public
+      class
+      Application
+       { 
+      private
+      User
+      user
+      ;
+      public
+      Application
+      (
+      User
+      user
+      ) {
+      this
+      .
+      user
+      =
+      user
+      ;
+        }
+      public
+      User
+      getUser
+      () {
+      return
+      user
+      ;
+        }
+      public
+      void
+      setUser
+      (
+      User
+      user
+      ) {
+      this
+      .
+      user
+      =
+      user
+      ;
+        }
+      }
+      ​
+      ​
+      public
+      class
+      User
+      implements
+      Serializable
+       {
+      private
+      String
+      id
+      ;
+      private
+      String
+      name
+      ;
+      private
+      String
+      sex
+      ;
+      private
+      Integer
+      age
+      ;
+      public
+      void
+      destroy
+      () {
+      System
+      .
+      out
+      .
+      println
+      (
+      "销毁!"
+      );
+        }
+      public
+      void
+      init
+      () {
+      System
+      .
+      out
+      .
+      println
+      (
+      "初始化!"
+      );
+        } 
+      ```
+
+      ```
+      1.根据属性名来加载
+      private User user;
+      <
+      bean
+      id
+      =
+      "application"
+      class
+      =
+      " com.werner.di.Application"
+      autowire
+      =
+      "byName"
+      /
+      >
+      <
+      bean
+      id
+      =
+      "user_id"
+      class
+      =
+      " com.werner.di.User"
+      >
+      <
+      property
+      name
+      =
+      "name"
+      value
+      =
+      "user"
+      /
+      >
+      <
+      /
+      bean
+      >
+      ​
+      2. 根据构造类型来加载
+      <
+      bean
+      id
+      =
+      "application"
+      class
+      =
+      " com.werner.di.Application"
+      autowire
+      =
+      "byType"
+      /
+      >
+      <
+      bean
+      id
+      =
+      "user"
+      class
+      =
+      " com.werner.di.User"
+      >
+      <
+      property
+      name
+      =
+      "name"
+      value
+      =
+      "user"
+      /
+      >
+      <
+      /
+      bean
+      >
+      ​
+      3. 根据构造方法来加载
+      public Application(User user) {
+        this.user = user;
+      }
+      <
+      bean
+      id
+      =
+      "app"
+      class
+      =
+      "com.werner.di.Application"
+      autowire
+      =
+      "constructor"
+      >
+      <
+      /
+      bean
+      >
+      ```
+
+   8、init-method
+
+   1. 说明
+
+      初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
+
+   2. 示例代码
+
+      ```
+      public class User implements Serializable {
+        public void init() {
+        System.out.println("初始化");
+        }
+      } 
+      ```
+
+      ```xml
+      <
+      bean
+      class
+      =
+      "com.werner.di.User"
+      name
+      =
+      "user"
+      init-method
+      =
+      "init
+      >
+      ```
+
+   9、destroy-method
+
+   1. 说明:
+
+      销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
+
+   2. 示例代码
+
+      ```
+      public
+      class
+      User
+      implements
+      Serializable
+       {
+      ​
+      public
+      void
+      destroy
+      () {
+        }
+      }
+      ```
+
+      ```
+      <
+      bean
+      class
+      =
+      "com.werner.di.User"
+      name
+      =
+      "user"
+      init-method
+      =
+      "init"
+      destroy-method
+      =
+      "destroy"
+      >
+      ```
+
+  
 
 
 
