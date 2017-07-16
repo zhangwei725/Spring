@@ -75,7 +75,7 @@
     }
    ```
 
-   ```
+   ```java
    public class Person {
        private Hend hend;
         public Person() {
@@ -96,7 +96,7 @@
 
 1. 示例代码
 
-   ```
+   ```java
     public class Person {
        private Hend hend;
         public Person() {
@@ -141,101 +141,8 @@
 
 1. 在pom.xml文件中添加
 
-   ```
-   <
-   dependency
-   >
-   <
-   groupId
-   >
-   org.springframework
-   <
-   /
-   groupId
-   >
-   <
-   artifactId
-   >
-   spring-core
-   <
-   /
-   artifactId
-   >
-   <
-   version
-   >
-   4.3.9.RELEASE
-   <
-   /
-   version
-   >
-   <
-   /
-   dependency
-   >
-   <
-   dependency
-   >
-   <
-   groupId
-   >
-   org.springframework
-   <
-   /
-   groupId
-   >
-   <
-   artifactId
-   >
-   spring-context
-   <
-   /
-   artifactId
-   >
-   <
-   version
-   >
-   4.3.9.RELEASE
-   <
-   /
-   version
-   >
-   <
-   /
-   dependency
-   >
-   ​
-   <
-   dependency
-   >
-   <
-   groupId
-   >
-   org.springframework
-   <
-   /
-   groupId
-   >
-   <
-   artifactId
-   >
-   spring-context-support
-   <
-   /
-   artifactId
-   >
-   <
-   version
-   >
-   4.3.9.RELEASE
-   <
-   /
-   version
-   >
-   <
-   /
-   dependency
-   >
+   ```xml
+
    ```
 
 2. 相应的jar
@@ -305,7 +212,7 @@
    8、lang
 
    ```
-   支持配置由Groovy、JRuby或者BeanShell等脚本实现的Bean 
+   支持配置由Groovy、JRuby或者BeanShell等脚本实现的Bean
    ```
 
    9、mvc
@@ -317,7 +224,7 @@
    10、oxm
 
    ```
-   支持由Java对象到XML的映射配置 
+   支持由Java对象到XML的映射配置
    ```
 
    ​
@@ -411,8 +318,6 @@ beans
    >
    下的任何位置，没有顺序关系
    ```
-
-
 
 #### 6.2.1、bean的xml配置
 
@@ -925,7 +830,7 @@ bean
       (
       "初始化!"
       );
-        } 
+        }
       ```
 
       ```
@@ -1041,7 +946,7 @@ bean
         public void init() {
         System.out.println("初始化");
         }
-      } 
+      }
       ```
 
       ```xml
@@ -1100,8 +1005,6 @@ bean
       "destroy"
       >
       ```
-
-  
 
 
 
