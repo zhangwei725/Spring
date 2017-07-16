@@ -321,8 +321,37 @@
 
 ##### 6.2.2.4、基本配置
 
-```
-
+```xml
+<bean   class="这个Bean的类"  
+            name/id="Bean在容器里面的唯一名称" 
+            scope＝"Bean的作用域范围"  
+            autowiring－mode＝"这个Bean的properties的自动注入方式，"  
+            lazy-init="是否为懒加载，"
+            init－method＝"容器初始化该Bean后的回调方法，"  
+            destroy-method ＝ "容器在销毁该Bean后的回调方法，详细解释看下面"    
+            abstract="是否为抽象Bean，主要用来统一XML配置文档里面的很多Bean的属性配置，与Java的Abstract Class无任何关系"
+            parent="父Bean的名称，会继承父Bean的属性，也是只在配置文档中有效，与Java的Class无任何关系"
+            factory-method="工厂方法的名字"
+            factory-bean="工厂Bean的名字"
+            depends-on ＝"依赖Bean的名字，Spring保证会在初始化这个Bean前先初始化被依赖的Beans,这个属性不会被子Bean继承，子Bean要重新写自己的depends-on"      
+            autowire-candidate = "是否为自动注入的候选，一般当其他Bean设置autowiring-mode属性为自动搜寻时可以避免或允许该Bean被列入匹配列表"    
+            primary ＝ "是否将该Bean在其他Bean的自动注入候选人中设为首选">  
+       
+			// Constructor－arg方式给属性赋值写法一
+            <constructor-arg type="int" value="1"/>
+            // Constructor－arg方式给属性赋值写法二
+            <constructor-arg name="xx" value="2"/>
+            // Constructor－arg方式给属性赋值写法三
+            <constructor-arg index="0" value="3"/>
+            // Properties方式给属性赋值写法一
+            <property name="xx">
+                 <ref bean="另外一个Bean的名字"/>
+            </property>
+            // Properties方式给属性赋值写法二
+            <property name="xx" ref="另外一个Bean的名字"/>
+            // Properties方式给属性赋值写法三
+            <property name="integerProperty" value="1"/>       
+</bean>
 ```
 
 ##### 6.2.2.5、详细说明
