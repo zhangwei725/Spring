@@ -232,63 +232,7 @@
 ##### 6.2.1.2 XML配置的结构
 
 ```
-<
-beans
->
-<
-import
-resource
-=
-"xxx.xml"
-/
->
-<
-bean
-id
-=
-""
-class
-=
-""
->
-<
-/
-bean
->
-<
-bean
-name
-=
-""
-class
-=
-""
->
-<
-/
-bean
->
-<
-alias
-alias
-=
-"alias"
-name
-=
-"alias"
-/
->
-<
-import
-resource
-=
-"xxx.xml"
-/
->
-<
-/
-beans
->
+
 ```
 
 1. 说明
@@ -308,15 +252,7 @@ beans
    3、import标签
 
    ```
-   用于导入其他配置文件的Bean定义，这是为了加载多个配置文件，当然也可以把这些配置文件构造为一个数组（new String[] {“xxx.xml”, xxx.xml}）传给ApplicationContext实现进行加载多个配置文件，那一个更适合由用户决定；这两种方式都是通过调用Bean Definition Reader 读取Bean定义，内部实现没有任何区别。
-   <
-   import
-   >
-   标签可以放在
-   <
-   beans
-   >
-   下的任何位置，没有顺序关系
+
    ```
 
 #### 6.2.1、bean的xml配置
@@ -354,125 +290,7 @@ beans
 ##### 6.2.2.4、基本配置
 
 ```
-<
-bean
-class
-=
-"这个Bean的类"
-name/id
-=
-"Bean在容器里面的唯一名称"
-scope＝
-"Bean的作用域范围"
-autowiring－mode＝
-"这个Bean的properties的自动注入方式，"
-lazy-init
-=
-"是否为懒加载，"
-init－method＝
-"容器初始化该Bean后的回调方法，"
-destroy-method
-＝
-"容器在销毁该Bean后的回调方法，详细解释看下面"
-abstract
-=
-"是否为抽象Bean，主要用来统一XML配置文档里面的很多Bean的属性配置，与Java的Abstract Class无任何关系"
-parent
-=
-"父Bean的名称，会继承父Bean的属性，也是只在配置文档中有效，与Java的Class无任何关系"
-factory-method
-=
-"工厂方法的名字"
-factory-bean
-=
-"工厂Bean的名字"
-depends-on
-＝
-"依赖Bean的名字，Spring保证会在初始化这个Bean前先初始化被依赖的Beans,这个属性不会被子Bean继承，子Bean要重新写自己的depends-on"
-autowire-candidate
- = 
-"是否为自动注入的候选，一般当其他Bean设置autowiring-mode属性为自动搜寻时可以避免或允许该Bean被列入匹配列表"
-primary
-＝
-"是否将该Bean在其他Bean的自动注入候选人中设为首选"
->
-// Constructor－arg方式给属性赋值写法一
-<
-constructor-arg
-type
-=
-"int"
-value
-=
-"1"
-/
->
-  // Constructor－arg方式给属性赋值写法二
-<
-constructor-arg
-name
-=
-"xx"
-value
-=
-"2"
-/
->
-  // Constructor－arg方式给属性赋值写法三
-<
-constructor-arg
-index
-=
-"0"
-value
-=
-"3"
-/
->
-  // Properties方式给属性赋值写法一
-<
-property
-name
-=
-"xx"
->
-<
-ref
-bean
-=
-"另外一个Bean的名字"
-/
->
-<
-/
-property
->
-  // Properties方式给属性赋值写法二
-<
-property
-name
-=
-"xx"
-ref
-=
-"另外一个Bean的名字"
-/
->
-  // Properties方式给属性赋值写法三
-<
-property
-name
-=
-"integerProperty"
-value
-=
-"1"
-/
->
-<
-/
-bean
->
+
 ```
 
 ##### 6.2.2.5、详细说明
@@ -495,10 +313,13 @@ bean
 
 4. singleton
 
-   ```
-   用来配置 spring bean 的作用域。在spring2.0之前bean只有2种作用域即：singleton(单例)、non-singleton（也称 prototype）, 
+   ```java
+   用来配置 spring bean 的作用域。在spring2.0之前bean只有2种作用域即：
+   singleton(单例)、non-singleton（也称 prototype）, 
    ​
-   Spring2.0以后，增加了session、request、global session三种专用于Web应用程序上下文的Bean。因此，默认情况下Spring2.0现在有五种类型的Bean。当然，Spring2.0对 Bean的类型的设计进行了重构，并设计出灵活的Bean类型支持，理论上可以有无数多种类型的Bean，用户可以根据自己的需要，增加新的Bean类 型，满足实际应用需求
+   Spring2.0以后，增加了session、request、global session三种专用于Web应用程序上下文的Bean。
+   因此，默认情况下Spring2.0现在有五种类型的Bean。当然，Spring2.0对 Bean的类型的设计进行了重构，
+   并设计出灵活的Bean类型支持，理论上可以有无数多种类型的Bean，用户可以根据自己的需要，增加新的Bean类 型，满足实际应用需求
    ```
 
    1、singleton 可选值
