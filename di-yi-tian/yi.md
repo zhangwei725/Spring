@@ -1,4 +1,4 @@
-## MVC发展史历程
+## 发展史历程
 
 ## 1. JSP + Java Bean\(Model1\)
 
