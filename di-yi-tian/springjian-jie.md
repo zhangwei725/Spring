@@ -116,7 +116,9 @@
 2. spring-tx 模块
 
    ```
-   支持编程式事务和声明式事务，可用于实现了特定接口的类和所有的 POJO 对象。编程式事务需要自己写beginTransaction()、commit()、rollback()等事务管理方法，声明式事务是通过注解或配置由 spring 自动处理，编程式事务粒度更细。
+   支持编程式事务和声明式事务，可用于实现了特定接口的类和所有的 POJO 对象。
+   编程式事务需要自己写beginTransaction()、commit()、rollback()等事务管理方法，
+   声明式事务是通过注解或配置由 spring 自动处理，编程式事务粒度更细。
    ```
 
 3. spring-orm 模块
@@ -172,7 +174,6 @@
 ```
 从 Spring 4 开始集成,从一些 Spring 集成项目的关键抽象中提取出来的，这些项目包括 Message、MessageChannel、MessageHandler 
 和其它服务于消息处理的项目。这个模块也包含一系列的注解用于映射消息到方法
-
 ```
 
 ### 3.9 Web
@@ -240,31 +241,4 @@ Spring包依赖说明:
 13. spring-mock.jar依赖spring-core.jar，spring-beans.jar，spring-dao.jar，spring-context.jar，spring-jdbc.jar
 
 [下载地址](http://repo.spring.io/release/org/springframework/spring)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
 
