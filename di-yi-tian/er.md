@@ -97,37 +97,16 @@
 1. 示例代码
 
    ```
-   public
-   class
-   Person
-    {
-   private
-   Hend
-   hend
-   ;
-   public
-   Person
-   () {
-   head
-   =
-   new
-   Head
-   ();
-     }
-   public
-   void
-   setHead
-   (
-   Head
-   head
-   ) {
-   this
-   .
-   head
-   =
-   head
-   ;
-     }
+    public class Person {
+       private Hend hend;
+        public Person() {
+           head = new Head();
+       }
+    
+       public void setHead(Head head) {
+           this.head = head;
+       }
+   }
    }
    ```
 
