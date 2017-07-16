@@ -494,7 +494,7 @@
          它指出你可能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。
          如果这是你不想要的情况（什么都不发生），通过设置dependency-check="objects"属性值来指定在这种情况下应该抛出错误。
       4、constructor：这个同byType类似，不过是应用于构造函数的参数。
-      如果在BeanFactory中不是恰好有一个bean与构造函数参数相同类型，则一个致命的错误会产生。
+         如果在BeanFactory中不是恰好有一个bean与构造函数参数相同类型，则一个致命的错误会产生。
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
       ```
 
@@ -527,7 +527,6 @@
             public void init() {
                 System.out.println("初始化!");
             }
-      
       ```
 
    8、init-method
