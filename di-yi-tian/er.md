@@ -471,7 +471,7 @@
    2. 示例代码
 
       ```
-        <bean id="user1"
+        <bean id="user"
                 class="com.zw.api.bean.User"
                 abstract="true"
                 scope="session"
@@ -501,6 +501,7 @@
    2. 示例代码
 
       ```
+      Java配置
       public class Application { 
           private User user;
 
@@ -527,6 +528,15 @@
             public void init() {
                 System.out.println("初始化!");
             }
+      
+      
+      xml配置      
+      
+      
+      
+      
+      
+      
       ```
 
    8、init-method
