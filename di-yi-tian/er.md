@@ -163,7 +163,6 @@
                <artifactId>spring-web</artifactId>
                <version>4.3.9.RELEASE</version>
            </dependency>
-
    ```
 
 2. 相应的jar
@@ -281,7 +280,11 @@
    3、import标签
 
    ```
-
+   用于导入其他配置文件的Bean定义，这是为了加载多个配置文件，
+   当然也可以把这些配置文件构造为一个数组（new String[] {“xxx.xml”, xxx.xml}）
+   传给ApplicationContext实现进行加载多个配置文件，那一个更适合由用户决定；
+   这两种方式都是通过调用Bean Definition Reader 读取Bean定义，内部实现没有任何区别。
+   <import>标签可以放在<beans>下的任何位置，没有顺序关系
    ```
 
 #### 6.2.1、bean的xml配置
