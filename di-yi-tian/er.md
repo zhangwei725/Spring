@@ -563,7 +563,7 @@
      public void init() {
      System.out.println("初始化");
      }
-   } 
+   }
    ```
 
    ```java
@@ -587,21 +587,8 @@
    ```
 
    ```
-   <
-   bean
-   class
-   =
-   "com.werner.di.User"
-   name
-   =
-   "user"
-   init-method
-   =
-   "init"
-   destroy-method
-   =
-   "destroy"
-   >
+   <bean class="com.werner.di.User" name="user"
+       init-method="init" destroy-method="destroy">
    ```
 
 
