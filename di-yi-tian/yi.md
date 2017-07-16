@@ -60,7 +60,7 @@
 
    6. 可扩展 \(Scalable\)
 
-4. 相关技术
+4. 技术规范
 
    1. JDBC\( Java database connectivity\)
 
