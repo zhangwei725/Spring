@@ -153,15 +153,11 @@
 
 ### 3.1.前提概要
 
-​ 很快EJB中用起来极为繁琐和笨重， 性能也不好， 为了获得所谓的分布式，反而背上了沉重的枷锁。
-
-​ 实体Bean很快没人用了， 就连简单的无状态Session bean 也被大家所诟病， 更致命的就是“代码的侵入性” 。
-
-​ 2002年，Rod Johnson写的一本书&lt;Expert One-on-One J2EE Design and Development&gt;
-
-​ 2003年2月，基于这本出版了极其叫卖的一本书&lt;Expert One-on-One J2EE Design and Development&gt;Spring开源项目开启
-
-​ 2004,出版了&lt;J2EE without EJB&gt;基于一个易懂的，轻量级的框架开发，已经是后EJB时代的趋势\( Expert_One-On-OneJ2EEDevelopmentWithoutEJB_\)
+1. ​ 很快EJB中用起来极为繁琐和笨重， 性能也不好， 为了获得所谓的分布式，反而背上了沉重的枷锁。
+2. ​ 实体Bean很快没人用了， 就连简单的无状态Session bean 也被大家所诟病， 更致命的就是“代码的侵入性” 。
+3. ​ 2002年，Rod Johnson写的一本书&lt;Expert One-on-One J2EE Design and Development&gt;
+4. ​ 2003年2月，基于这本出版了极其叫卖的一本书&lt;Expert One-on-One J2EE Design and Development&gt;Spring开源项目开启
+5. ​ 2004,出版了&lt;J2EE without EJB&gt;基于一个易懂的，轻量级的框架开发，已经是后EJB时代的趋势\( Expert_One-On-OneJ2EEDevelopmentWithoutEJB_\)
 
 ### 3.2. 核心思想
 
