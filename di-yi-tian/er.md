@@ -67,32 +67,20 @@
        private Hand hand;
        private Footer footer;
        private Head head;
-   	public Person(Hand hand, Footer footer, Head head) {
+       public Person(Hand hand, Footer footer, Head head) {
            this.hand = hand;
            this.footer = footer;
            this.head = head;
-     	  }
+           }
     }
    ```
 
    ```
-   public
-   class
-   Person
-    {
-   private
-   Hend
-   hend
-   ;
-   public
-   Person
-   () {
-   head
-   =
-   new
-   Head
-   ();
-     }
+   public class Person {
+       private Hend hend;
+        public Person() {
+           head = new Head();
+       }
    }
    ```
 
