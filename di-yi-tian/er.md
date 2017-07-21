@@ -379,7 +379,8 @@
    singleton(单例)、non-singleton（也称 prototype）, 
    Spring2.0以后，增加了session、request、global session三种专用于Web应用程序上下文的Bean。
    因此，默认情况下Spring2.0现在有五种类型的Bean。当然，Spring2.0对 Bean的类型的设计进行了重构，
-   并设计出灵活的Bean类型支持，理论上可以有无数多种类型的Bean，用户可以根据自己的需要，增加新的Bean类 型，满足实际应用需求
+   并设计出灵活的Bean类型支持，理论上可以有无数多种类型的Bean，用户可以根据自己的需要，增加新的Bean类 型，
+   满足实际应用需求
    ```
 
    1、singleton 可选值
