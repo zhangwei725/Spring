@@ -16,27 +16,27 @@
 
 4. 依赖注入（DI）
 
-   - IoC的别名,2004年，Martin Fowler探讨了同一个问题，既然IoC是控制反转，那么到底是“哪些方面的控制被反转了呢？”，经过详细地分析和论证后，他得出了答案：“获得依赖对象的过程被反转了”。控制被反转之后，获得依赖对象的过程由自身管理对象变为由IoC容器主动注入。于是，他给“控制反转”取了一个更合适的名字叫做“依赖注入（Dependency Injection，DI）”。他的这个答案，实际上给出了实现IoC的方法：注入。
+   * IoC的别名,2004年，Martin Fowler探讨了同一个问题，既然IoC是控制反转，那么到底是“哪些方面的控制被反转了呢？”，经过详细地分析和论证后，他得出了答案：“获得依赖对象的过程被反转了”。控制被反转之后，获得依赖对象的过程由自身管理对象变为由IoC容器主动注入。于是，他给“控制反转”取了一个更合适的名字叫做“依赖注入（Dependency Injection，DI）”。他的这个答案，实际上给出了实现IoC的方法：注入。
 
-   - 所谓依赖注入，就是由IoC容器在运行期间，动态地将某种依赖关系注入到对象之中。
+   * 所谓依赖注入，就是由IoC容器在运行期间，动态地将某种依赖关系注入到对象之中。
 
-   - 所以，依赖注入（DI）和控制反转（IoC）是从不同的角度描述的同一件事情，就是指通过引入IoC容器，利用依赖关系注入的方式，实现对象之间的解耦
+   * 所以，依赖注入（DI）和控制反转（IoC）是从不同的角度描述的同一件事情，就是指通过引入IoC容器，利用依赖关系注入的方式，实现对象之间的解耦
 
 5. 依赖关系的四种情况
 
-   - 对象之间最弱的一种关联方式，是临时性的关联。代码中一般指由局部变量、函数参数、返回值建立的对于其他对象的调用关系
+   * 对象之间最弱的一种关联方式，是临时性的关联。代码中一般指由局部变量、函数参数、返回值建立的对于其他对象的调用关系
 
-   - 四种情况
+   * 四种情况
 
-      - ClassA中某个方法的参数类型是ClassB； 这种情况成为耦合；
+     * ClassA中某个方法的参数类型是ClassB； 这种情况成为耦合；
 
-      - ClassA中某个方法的参数类型是ClassB的一个属性； 这种情况成为紧耦合；
+     * ClassA中某个方法的参数类型是ClassB的一个属性； 这种情况成为紧耦合；
 
-      - ClassA中某个方法的实现实例化ClassB；
+     * ClassA中某个方法的实现实例化ClassB；
 
-      - ClassA中某个方法的返回值的类型是ClassB；
+     * ClassA中某个方法的返回值的类型是ClassB；
 
-   - 如果出现了上述四种情况之一，两个类很有可能就是“依赖”关系。 依赖关系（Dependency）：是类与类之间的连接，依赖总是单向的。依赖关系代表一个类依赖于另一个类的定义
+   * 如果出现了上述四种情况之一，两个类很有可能就是“依赖”关系。 依赖关系（Dependency）：是类与类之间的连接，依赖总是单向的。依赖关系代表一个类依赖于另一个类的定义
 
 6. 总结
 
@@ -398,29 +398,29 @@
 
    2、prototype 可选值
 
-   - 说明
+   * 说明
 
-      prototype作用域部署的bean，每一次请求（将其注入到另一个bean中，或者以程序的方式调用容器的 getBean\(\)方法）都会产生一个新的bean实例，相当与一个new的操作，对于prototype作用域的bean，有一点非常重要，那就是Spring不能对一个prototype bean的整个生命周期负责，容器在初始化、配置、装饰或者是装配完一个prototype实例后，将它交给客户端，随后就对该prototype实例不闻不问了。不管何种作用域，容器都会调用所有对象的初始化生命周期回调方法，而对prototype而言，任何配置好的析构生命周期回调方法都将不会被调用。 清除prototype作用域的对象并释放任何prototype bean所持有的昂贵资源，都是客户端代码的职责。（让Spring容器释放被singleton作用域bean占用资源的一种可行方式是，通过使用 bean的后置处理器，该处理器持有要被清除的bean的引用。）
+     prototype作用域部署的bean，每一次请求（将其注入到另一个bean中，或者以程序的方式调用容器的 getBean\(\)方法）都会产生一个新的bean实例，相当与一个new的操作，对于prototype作用域的bean，有一点非常重要，那就是Spring不能对一个prototype bean的整个生命周期负责，容器在初始化、配置、装饰或者是装配完一个prototype实例后，将它交给客户端，随后就对该prototype实例不闻不问了。不管何种作用域，容器都会调用所有对象的初始化生命周期回调方法，而对prototype而言，任何配置好的析构生命周期回调方法都将不会被调用。 清除prototype作用域的对象并释放任何prototype bean所持有的昂贵资源，都是客户端代码的职责。（让Spring容器释放被singleton作用域bean占用资源的一种可行方式是，通过使用 bean的后置处理器，该处理器持有要被清除的bean的引用。）
 
-   - 示例代码
+   * 示例代码
 
-      ```
+     ```
           <bean id="user"
                 class="com.zw.api.bean.User"
                 scope="prototype"
                 init-method="init"
                 destroy-method="destroy">
-      ```
+     ```
 
    3、request 可选值
 
-   - 说明
+   * 说明
 
-      ​ request表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效，配置实例：request、session、global session使用的时候首先要在初始化web的web.xml中做如下配置：如果你使用的是Servlet 2.4及以上的web容器，那么你仅需要在web应用的XML声明文件web.xml中增加下述ContextListener即可：
+     ​ request表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效，配置实例：request、session、global session使用的时候首先要在初始化web的web.xml中做如下配置：如果你使用的是Servlet 2.4及以上的web容器，那么你仅需要在web应用的XML声明文件web.xml中增加下述ContextListener即可：
 
-   - 示例代码
+   * 示例代码
 
-      ```
+     ```
       <web-app>
          ...
         <listener>
@@ -428,26 +428,26 @@
         </listener>
          ...
       </web-app>
-      ```
+     ```
 
-      ```
+     ```
       <bean id="user"
                 class="com.zw.api.bean.User"
                 scope="request"
                 init-method="init"
                 destroy-method="destroy">
       </bean>
-      ```
+     ```
 
    4、session
 
-   - 说明
+   * 说明
 
-      session作用域表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效,和request配置实例的前提一样，配置好web启动文件就可以如下配置
+     session作用域表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效,和request配置实例的前提一样，配置好web启动文件就可以如下配置
 
-   - 示例代码
+   * 示例代码
 
-      ```
+     ```
       <web-app>
          ...
         <listener>
@@ -461,17 +461,17 @@
                 init-method="init"
                 destroy-method="destroy">
       </bean>
-      ```
+     ```
 
    5、abstract
 
-   - 说明
+   * 说明
 
-      设定ApplicationContext是否对bean进行预先的初始化。
+     设定ApplicationContext是否对bean进行预先的初始化。
 
-   - 示例代码
+   * 示例代码
 
-      ```
+     ```
         <bean id="user"
                 class="com.zw.api.bean.User"
                 abstract="true"
@@ -479,29 +479,29 @@
                 init-method="init"
                 destroy-method="destroy">
           </bean>
-      ```
+     ```
 
    6、parent
 
    7、autowire
 
-   - bean自动装配模式。可选5种模式
+   * bean自动装配模式。可选5种模式
 
-      ```
+     ```
       1、no：不使用自动装配。Bean的引用必须通过ref元素定义。
       2、byName：通过属性名字进行自动装配。
       3、byType：如果BeanFactory中正好有一个同属性类型一样的bean，就自动装配这个属性。
          如果有多于一个这样的bean，就抛出一个致命异常，
-         它指出你可能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。
+         它指出你能不能对那个bean使用byType的自动装配。如果没有匹配的bean，则什么都不会发生，属性不会被设置。
          如果这是你不想要的情况（什么都不发生），通过设置dependency-check="objects"属性值来指定在这种情况下应该抛出错误。
       4、constructor：这个同byType类似，不过是应用于构造函数的参数。
          如果在BeanFactory中不是恰好有一个bean与构造函数参数相同类型，则一个致命的错误会产生。
       5、autodetect： 通过对bean 检查类的内部来选择constructor或byType。如果找到一个缺省的构造函数，那么就会应用byType。
-      ```
+     ```
 
-   - 示例代码
+   * 示例代码
 
-      ```java
+     ```java
       public class Application { 
           private User user;
 
@@ -527,9 +527,9 @@
             public void init() {
                 System.out.println("初始化!");
       }
-      ```
+     ```
 
-      ```java
+     ```java
         1.根据属性名来加载
         private User user;
         <bean id="application" class=" com.werner.di.Application" autowire="byName"/>  
@@ -549,48 +549,48 @@
         }
         <bean id="app" class="com.werner.di.Application" autowire="constructor">
         </bean>
-      ```
+     ```
 
 8、init-method
 
-- 说明
+* 说明
 
-   初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
+  初始化方法,此方法将在BeanFactory创建JavaBean实例之后，在向应用层返回引用之前执行。一般用于一些资源的初始化工作。
 
-- 示例代码
+* 示例代码
 
-   ```
+  ```
    public class User implements Serializable {
      public void init() {
      System.out.println("初始化");
      }
    }
-   ```
+  ```
 
-   ```java
+  ```java
    <bean class="com.werner.di.User" name="user"
        init-method="init>
-   ```
+  ```
 
 9、destroy-method
 
-- 说明:
+* 说明:
 
-   销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
+  销毁方法,此方法将在BeanFactory销毁的时候执行，一般用于资源释放。
 
-- 示例代码
+* 示例代码
 
-   ```java
+  ```java
    public class User implements Serializable {
        public void destroy() {
        }
    }
-   ```
+  ```
 
-   ```
+  ```
    <bean class="com.werner.di.User" name="user"
        init-method="init" destroy-method="destroy">
-   ```
+  ```
 
 
 
